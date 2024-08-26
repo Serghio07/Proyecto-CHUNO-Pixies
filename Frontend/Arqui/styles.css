@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fafafa;
+}
+
+header {
+    background-color: #a8dadc; /* Verde pastel */
+    color: #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.hero {
+    background: url('conference-background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    color: #457b9d; /* Azul pastel */
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #1d3557; /* Azul oscuro pastel */
+}
+
+.hero-content .btn {
+    padding: 10px 20px;
+    background-color: #f4a261; /* Amarillo pastel */
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.about, .services, .contact {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f1faee; /* Fondo muy claro pastel */
+}
+
+.about h2, .services h2, .contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1d3557; /* Azul oscuro pastel */
+}
+
+.services .service {
+    margin: 20px 0;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #a8dadc; /* Borde verde pastel */
+    border-radius: 5px;
+}
+
+.contact .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #457b9d; /* Azul pastel */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #a8dadc; /* Verde pastel */
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
