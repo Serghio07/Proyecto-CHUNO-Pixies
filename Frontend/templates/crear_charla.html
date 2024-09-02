@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Charla</title>
+    <title>Crear Conferencia</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>CHUNO - Crear Charla</h1>
+                <h1>CHUNO - Crear Conferencia</h1>
             </div>
         </nav>
     </header>
 
-    <section class="crear-charla">
+    <section class="crear-conferencia">
         <div class="container">
-            <h2>Crear Nueva Charla</h2>
-            <form action="submit_charla.php" method="post">
-                <label for="titulo">Título de la Charla:</label>
+            <h2>Crear Nueva Conferencia</h2>
+            <form id="crearConferenciaForm">
+                <label for="titulo">Título de la Conferencia:</label>
                 <input type="text" id="titulo" name="titulo" required>
 
                 <label for="descripcion">Descripción:</label>
@@ -28,13 +28,19 @@
                 <label for="fecha">Fecha:</label>
                 <input type="date" id="fecha" name="fecha" required>
 
-                <button type="submit" class="btn">Crear Charla</button>
+                <button type="submit" class="btn">Crear Conferencia</button>
             </form>
+
+            <!-- Contenedor para mostrar la respuesta del servidor -->
+            <div id="respuesta"></div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Incluir el archivo de JavaScript -->
+    <script src="static/js/crear_charla.js"></script>
 </body>
 </html>
