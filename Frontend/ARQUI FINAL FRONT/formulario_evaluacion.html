@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Conferencias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO - Evaluación de Conferencias</h1>
+            </div>
+        </nav>
+    </header>
+
+    <section class="formulario-evaluacion">
+        <div class="container">
+            <h2>Evaluación de la Conferencia</h2>
+            <p>Por favor, completa el siguiente formulario para evaluar la conferencia a la que asististe.</p>
+            <form action="submit_evaluacion.php" method="post">
+                <label for="charla_id">ID de la Charla:</label>
+                <input type="text" id="charla_id" name="charla_id" required>
+
+                <label for="rating">Calificación:</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 - Pobre</option>
+                    <option value="2">2 - Justo</option>
+                    <option value="3">3 - Bueno</option>
+                    <option value="4">4 - Muy Bueno</option>
+                    <option value="5">5 - Excelente</option>
+                </select>
+
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" placeholder="Escribe tus comentarios aquí..." required></textarea>
+
+                <button type="submit" class="btn">Enviar Evaluación</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

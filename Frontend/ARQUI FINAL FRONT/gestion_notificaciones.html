@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Notificaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO - Gestión de Notificaciones</h1>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gestion-notificaciones">
+        <div class="container">
+            <h2>Notificaciones del Evento</h2>
+            <form action="submit_notificacion.php" method="post">
+                <label for="tipo">Tipo de Notificación:</label>
+                <select id="tipo" name="tipo">
+                    <option value="general">General</option>
+                    <option value="oradores">Oradores</option>
+                    <option value="asistentes">Asistentes</option>
+                </select>
+
+                <label for="mensaje">Mensaje de Notificación:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit" class="btn">Enviar Notificación</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

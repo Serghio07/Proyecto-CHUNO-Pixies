@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Charlas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO - Gestión de Charlas</h1>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gestion-charlas">
+        <div class="container">
+            <h2>Modificar y Administrar Charlas</h2>
+            <form action="update_charla.php" method="post">
+                <label for="charla_id">ID de la Charla:</label>
+                <input type="text" id="charla_id" name="charla_id" required>
+
+                <label for="nuevo_titulo">Nuevo Título:</label>
+                <input type="text" id="nuevo_titulo" name="nuevo_titulo">
+
+                <label for="nueva_descripcion">Nueva Descripción:</label>
+                <textarea id="nueva_descripcion" name="nueva_descripcion"></textarea>
+
+                <button type="submit" class="btn">Actualizar Charla</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
