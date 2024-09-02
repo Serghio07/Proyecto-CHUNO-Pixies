@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUNO - Contacto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="orador_panel.html">Panel Orador</a></li>
+                <li><a href="asistente_panel.html">Panel Asistente</a></li>
+                <li><a href="organizador_panel.html">Panel Organizador</a></li>
+                <li><a href="evaluacion.html">Evaluaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Contacto -->
+    <section class="contact">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p>Estamos aquí para ayudarte. Completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
+
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Email" required>
+                <textarea name="mensaje" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p>Email: contacto@chuno.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Av. Ejemplo 123, Ciudad, País</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -11,7 +11,7 @@ try:
     firebase_admin.get_app()
 except ValueError:
     # Si no está inicializada, inicialízala
-    cred = credentials.Certificate('Backend/chuno-6384b-firebase-adminsdk-3tk2c-6978abeab8.json')
+    cred = credentials.Certificate('chuno-6384b-firebase-adminsdk-3tk2c-6978abeab8.json')
     firebase_admin.initialize_app(cred)
 
 # Conecta a Firestore
