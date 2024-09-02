@@ -144,62 +144,7 @@ footer {
 }
 
 
-/* Estilo para el calendario */
-#calendar {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
 
-/* Sección de notas */
-.notes-section {
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: left;
-}
-
-#note-input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #CCC7AE;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #D19793;
-    color: #FFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #545b55;
-}
-
-#notes-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.note {
-    background-color: #EED5B7;
-    width: 150px;
-    height: 150px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    line-height: 1.5;
-    word-wrap: break-word;
-    position: relative;
-}
 
 
 /* Estilo general para la página de inicio de sesión */
@@ -355,4 +300,496 @@ button:hover {
 
 .login-link a:hover {
     text-decoration: underline;
+}
+
+
+/* Estilo general para la página de contacto */
+.contact {
+    background-color: #F6CEC8;
+    padding: 40px 20px;
+}
+
+.contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #545b55;
+}
+
+.contact h2 {
+    color: #545b55;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #CCC7AE;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FFF;
+    color: #545b55;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-form .btn {
+    background-color: #D19793;
+    color: #FFF;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #545b55;
+}
+
+.contact-info {
+    background-color: #EED5B7;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    color: #545b55;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info strong {
+    color: #545b55;
+}
+
+/* Sección Crear Charla */
+.crear-charla {
+    background-color: #EED5B7;
+    padding: 40px 20px;
+}
+
+.crear-charla .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crear-charla h2 {
+    color: #D19793;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #545b55;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC7AE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.btn {
+    background-color: #D19793;
+    color: #FFF;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #545b55;
+}
+
+
+/* Sección Editar Charla */
+.editar-charla {
+    background-color: #EED5B7;
+    padding: 40px 20px;
+}
+
+.editar-charla .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.editar-charla h2 {
+    color: #D19793;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #545b55;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC7AE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.btn {
+    background-color: #93c2d1;
+    color: #FFF;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #545b55;
+}
+
+/* Estilo para la sección de diapositivas */
+.acceder-diapositivas {
+    background-color: #EED5B7;
+    padding: 40px 20px;
+}
+
+.acceder-diapositivas .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.acceder-diapositivas h2 {
+    color: #D19793;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #545b55;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC7AE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #D19793;
+    color: #FFF;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #545b55;
+}
+
+/* Estilo para las diapositivas de ejemplo */
+.example-section {
+    margin-top: 40px;
+}
+
+.example-slide {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.example-slide img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #CCC7AE;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.example-slide h4 {
+    color: #D19793;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la sección de votación */
+.content {
+    background-color: #F6CEC8;
+    padding: 40px 20px;
+}
+
+.content .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.content h2 {
+    color: #D19793;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #545b55;
+    margin-bottom: 20px;
+}
+
+.voting-form .question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.voting-form label {
+    display: block;
+    font-size: 18px;
+    color: #545b55;
+    cursor: pointer;
+}
+
+.voting-form input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #D19793;
+}
+
+.btn {
+    background-color: #D19793;
+    color: #FFF;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #545b55;
+}
+
+/* Estilo para la sección de contenido del programa*/
+.content {
+    background-color: #F6CEC8;
+    padding: 40px 20px;
+}
+
+.content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo para el calendario */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* Estilo para la sección de notas */
+.notes-section {
+    margin-top: 40px;
+}
+
+#note-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #CCC7AE;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #D19793;
+    color: #FFF;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #545b55;
+}
+
+#notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.note {
+    background-color: #EED5B7;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    position: relative;
+}
+
+
+/* Estilos para el contenedor de notificaciones */
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    background-color: #EED5B7;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.notification i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #D19793;
+}
+
+.notification p {
+    margin: 0;
+    color: #545b55;
+}
+
+/* Estilos para iconos */
+.fas {
+    font-size: 24px;
+}
+
+/* Estilos para los botones de navegación */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.nav-buttons .btn {
+    background-color:#CCC7AE;
+    color: #FFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.nav-buttons .btn:hover {
+    background-color:#545b55;
+    color:#ffffff;
+   
+    
+}
+
+/* Estilos para iconos */
+.fas {
+    font-size: 35px;
 }

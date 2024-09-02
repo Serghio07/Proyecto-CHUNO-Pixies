@@ -9,14 +9,36 @@
 <body>
     <header>
         <nav>
-            <h1>Votación de Charlas</h1>
+            <div class="logo">
+                <h1>CHUNO - Votación de Charlas</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="asistente.html">Panel de Asistente</a></li>
+            </ul>
         </nav>
     </header>
 
     <section class="content">
-        <h2>Votar por Charlas</h2>
-        <p>Aquí puedes votar por tus charlas favoritas.</p>
-        <!-- Contenido para la votación -->
+        <div class="container">
+            <h2>Votar por Charlas</h2>
+            <p>Aquí puedes votar por tus charlas favoritas.</p>
+            <form action="submit_vote.php" method="post" class="voting-form">
+                <div class="question">
+                    <label for="charla_1">
+                        <input type="radio" id="charla_1" name="charla" value="charla_1" required>
+                        Charla de Conocimiento
+                    </label>
+                </div>
+                <div class="question">
+                    <label for="charla_2">
+                        <input type="radio" id="charla_2" name="charla" value="charla_2">
+                        Conferencia Informativa
+                    </label>
+                </div>
+                <button type="submit" class="btn">Enviar Voto</button>
+            </form>
+        </div>
     </section>
 
     <footer>
