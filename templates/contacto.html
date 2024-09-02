@@ -13,14 +13,14 @@
                 <h1>CHUNO</h1>
             </div>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="orador_panel.html">Panel Orador</a></li>
-                <li><a href="asistente_panel.html">Panel Asistente</a></li>
-                <li><a href="organizador_panel.html">Panel Organizador</a></li>
-                <li><a href="evaluacion.html">Evaluaciones</a></li>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('nosotros') }}">Sobre Nosotros</a></li>
+                <li><a href="{{ url_for('servicios') }}">Servicios</a></li>
+                <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                <li><a href="{{ url_for('orador_panel') }}">Panel Orador</a></li>
+                <li><a href="{{ url_for('asistente_panel') }}">Panel Asistente</a></li>
+                <li><a href="{{ url_for('organizador_panel') }}">Panel Organizador</a></li>
+                <li><a href="{{ url_for('evaluacion') }}">Evaluaciones</a></li>
             </ul>
         </nav>
     </header>
