@@ -1,73 +1,30 @@
-from flask import Flask, jsonify, request
-import psycopg2
-from psycopg2.extras import RealDictCursor
+import firebase_admin
+from firebase_admin import credentials, firestore
+from flask import Flask, render_template, request, jsonify
 
+# Configuración de Firebase
+cred = credentials.Certificate('Backend/Clave.json')
+firebase_admin.initialize_app(cred)
+
+# Inicializa Firestore DB
+db = firestore.client()
+
+# Configuración de Flask
 app = Flask(__name__)
 
-# Configuración de la base de datos
-DATABASE = {
-    'host': 'localhost',
-    'database': 'nombre_de_tu_base_de_datos',
-    'user': 'tu_usuario',
-    'password': 'tu_contraseña'
-}
-
-def get_db_connection():
-    conn = psycopg2.connect(
-        host=DATABASE['host'],
-        database=DATABASE['database'],
-        user=DATABASE['user'],
-        password=DATABASE['password'],
-        cursor_factory=RealDictCursor
-    )
-    return conn
-
+# Ruta principal que obtiene datos de Firebase
 @app.route('/')
 def home():
-    return "Bienvenido a CHUNO"
+    docs = db.collection('tu-coleccion').get()
+    datos = [doc.to_dict() for doc in docs]
+    return render_template('index.html', datos=datos)
 
-@app.route('/about')
-def about():
-    # Ejemplo de una consulta a la base de datos
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM about')
-    about_info = cur.fetchall()
-    cur.close()
-    conn.close()
-    return jsonify(about_info)
-
-@app.route('/services')
-def services():
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM services')
-    services_info = cur.fetchall()
-    cur.close()
-    conn.close()
-    return jsonify(services_info)
-
-@app.route('/contact', methods=['POST'])
-def contact():
+# Ruta para agregar datos
+@app.route('/add', methods=['POST'])
+def add_data():
     data = request.json
-    name = data.get('name')
-    email = data.get('email')
-    message = data.get('message')
-
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute(
-        'INSERT INTO contact (name, email, message) VALUES (%s, %s, %s)',
-        (name, email, message)
-    )
-    conn.commit()
-    cur.close()
-    conn.close()
-
-    return jsonify({
-        'status': 'success',
-        'message': f'Gracias, {name}. Hemos recibido tu mensaje.'
-    })
+    db.collection('tu-coleccion').add(data)
+    return jsonify({"message": "Data added successfully"}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
