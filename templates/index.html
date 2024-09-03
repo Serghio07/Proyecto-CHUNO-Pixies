@@ -42,19 +42,20 @@
     <section class="access-panels">
         <div class="container">
             <div class="panel">
-                <a href="orador_panel.html" class="btn">Acceso Oradores</a>
+                <a href="{{ url_for('orador_panel') }}" class="btn">Acceso Oradores</a>
             </div>
             <div class="panel">
-                <a href="asistente_panel.html" class="btn">Acceso Asistentes</a>
+                <a href="{{ url_for('asistente_panel') }}" class="btn">Acceso Asistentes</a>
             </div>
             <div class="panel">
-                <a href="organizador_panel.html" class="btn">Acceso Organizadores</a>
+                <a href="{{ url_for('organizador_panel') }}" class="btn">Acceso Organizadores</a>
             </div>
             <div class="panel">
-                <a href="evaluacion.html" class="btn">Sistema de Evaluación</a>
+                <a href="{{ url_for('evaluacion') }}" class="btn">Sistema de Evaluación</a>
             </div>
         </div>
     </section>
+    
 
     <!-- Información Adicional de Inicio -->
     <section class="intro">

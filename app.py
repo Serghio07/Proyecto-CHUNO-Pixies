@@ -54,5 +54,17 @@ def organizador_panel():
 def evaluacion():
     return render_template('evaluacion.html')
 
+@app.route('/crear_charla')
+def crear_charla():
+    return render_template('crear_charla.html')
+
+@app.route('/editar_charla')
+def editar_charla():
+    return render_template('editar_charla.html')
+
+@app.route('/acceder_diapositivas')
+def acceder_diapositivas():
+    return render_template('acceder_diapositivas.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

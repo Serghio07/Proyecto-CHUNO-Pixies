@@ -28,9 +28,9 @@
     <section class="orador-panel">
         <div class="container">
             <h2>Gestión de Charlas</h2>
-            <a href="crear_charla.html" class="btn">Crear Nueva Charla</a>
-            <a href="editar_charla.html" class="btn">Editar Charlas Existentes</a>
-            <a href="acceder_diapositivas.html" class="btn">Acceder Diapositivas</a>
+            <a href="{{ url_for('crear_charla') }}" class="btn">Crear Nueva Charla</a>
+            <a href="{{ url_for('editar_charla') }}" class="btn">Editar Charlas Existentes</a>
+            <a href="{{ url_for('acceder_diapositivas') }}" class="btn">Acceder Diapositivas</a>
         </div>
     </section>
 
