@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Asistente</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el header */
+        header {
+            background-color: #343a40; /* Gris oscuro */
+            color: #ffffff;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header ul li {
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header ul li a:hover {
+            color: #d4d4d4; /* Color gris claro */
+        }
+
+        /* Estilos para la sección del panel del asistente */
+        .asistente-panel {
+            background-color: #f8f9fa; /* Gris muy claro */
+            padding: 50px 0;
+        }
+
+        .asistente-panel .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .asistente-panel h2 {
+            font-size: 2.2em;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .asistente-panel .description {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #666666;
+        }
+
+        .asistente-panel .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .asistente-panel .btn:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #343a40; /* Gris oscuro */
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO - Asistentes</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="orador_panel.html">Panel Orador</a></li>
+                <li><a href="asistente_panel.html">Panel Asistente</a></li>
+                <li><a href="organizador_panel.html">Panel Organizador</a></li>
+                <li><a href="evaluacion.html">Evaluaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="asistente-panel">
+        <div class="container">
+            <h2>Programa de Conferencias</h2>
+            <p class="description">Bienvenido al panel del asistente. Aquí puedes gestionar tu participación en las conferencias de CHUNO. Accede a diferentes herramientas para ver el programa de conferencias, votar por las charlas que más te interesen y revisar las notificaciones importantes relacionadas con el evento.</p>
+            <a href="programa_conferencias.html" class="btn">Ver Programa</a>
+            <a href="votar_charlas.html" class="btn">Votar por Charlas</a>
+            <a href="notificaciones.html" class="btn">Notificaciones</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

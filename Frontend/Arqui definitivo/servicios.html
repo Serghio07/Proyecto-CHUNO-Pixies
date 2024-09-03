@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUNO - Servicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para el header */
+        header {
+            background-color: #343a40; /* Gris oscuro */
+            color: #ffffff;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header ul li {
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header ul li a:hover {
+            color: #d4d4d4; /* Color gris claro */
+        }
+
+        /* Estilos para la sección Servicios */
+        .services {
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .services .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .services p {
+            text-align: center;
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .service {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service i {
+            font-size: 3rem;
+            color: #007bff; /* Color azul */
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .service p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #343a40; /* Gris oscuro */
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="orador_panel.html">Panel Orador</a></li>
+                <li><a href="asistente_panel.html">Panel Asistente</a></li>
+                <li><a href="organizador_panel.html">Panel Organizador</a></li>
+                <li><a href="evaluacion.html">Evaluaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Servicios -->
+    <section class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>En CHUNO ofrecemos una amplia gama de servicios diseñados para hacer que tu evento sea un éxito rotundo. Nos encargamos de todo para que puedas centrarte en lo que realmente importa.</p>
+
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Planificación de Eventos</h3>
+                    <p>Nos encargamos de toda la planificación y organización para garantizar que tu evento se ejecute sin problemas, desde la idea inicial hasta el final.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Marketing de Conferencias</h3>
+                    <p>Nuestro equipo de expertos en marketing asegura que tu conferencia llegue a la audiencia adecuada a través de estrategias efectivas.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-tools"></i>
+                    <h3>Soporte Técnico</h3>
+                    <p>Contamos con un equipo especializado en tecnología para ofrecer soporte durante tu evento, asegurando que todo funcione correctamente.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Diseño y Decoración</h3>
+                    <p>Transformamos cualquier espacio en un entorno impresionante, reflejando la identidad de tu marca y el estilo de tu conferencia.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Gestión de Invitados</h3>
+                    <p>Manejamos todos los aspectos relacionados con la inscripción, la bienvenida y el seguimiento de los invitados, garantizando una experiencia fluida.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-video"></i>
+                    <h3>Producción Audiovisual</h3>
+                    <p>Proveemos soluciones audiovisuales de alta calidad para asegurar que tu conferencia tenga el impacto visual y sonoro que merece.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

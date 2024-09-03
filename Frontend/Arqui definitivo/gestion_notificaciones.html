@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Notificaciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el header */
+        header {
+            background-color: #343a40; /* Gris oscuro */
+            color: #ffffff;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        /* Estilos para la sección de gestión de notificaciones */
+        .gestion-notificaciones {
+            background-color: #f8f9fa; /* Gris muy claro */
+            padding: 50px 0;
+        }
+
+        .gestion-notificaciones .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .gestion-notificaciones h2 {
+            font-size: 2.2em;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .gestion-notificaciones form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .gestion-notificaciones label {
+            font-size: 1em;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .gestion-notificaciones select,
+        .gestion-notificaciones textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .gestion-notificaciones button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gestion-notificaciones button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #343a40; /* Gris oscuro */
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CHUNO - Gestión de Notificaciones</h1>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gestion-notificaciones">
+        <div class="container">
+            <h2>Notificaciones del Evento</h2>
+            <form action="submit_notificacion.php" method="post">
+                <label for="tipo">Tipo de Notificación:</label>
+                <select id="tipo" name="tipo">
+                    <option value="general">General</option>
+                    <option value="oradores">Oradores</option>
+                    <option value="asistentes">Asistentes</option>
+                </select>
+
+                <label for="mensaje">Mensaje de Notificación:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit" class="btn">Enviar Notificación</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CHUNO. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
