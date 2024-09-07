@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Conferencias</title>
+    <link rel="stylesheet" href="progra.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Conferencia Chuno">
+            </div>
+            <h1>Conferencias Chuno</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="programa.html">Programa de Conferencias</a></li>
+                    <li><a href="salas.html">Salas</a></li>
+                    <li><a href="diapositivas.html">Diapositivas de Oradores</a></li>
+                    <li><a href="votacion.html">Votación</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="banner-content">
+            <h2>Programa de Conferencias</h2>
+            <p>Descubre nuestras últimas ofertas y novedades.</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="programa" class="seccion">
+            <h2>Programa de Conferencias</h2>
+            <p>Consulte el calendario de nuestras conferencias a continuación para conocer las charlas programadas por día, hora y sala.</p>
+            
+            
+            <img src="img/img2.jpg" alt="Imagen del Programa de Conferencias" class="programa-img">
+    
+          
+            <button id="show-calendar" class="show-calendar-btn">Mostrar Calendario</button>
+            
+            <table class="calendario">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Hora</th>
+                        <th>Conferencia</th>
+                        <th>Orador</th>
+                        <th>Sala</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>10:00 AM</td>
+                        <td>Inteligencia Artificial</td>
+                        <td>Juan Pérez</td>
+                        <td>Sala 1</td>
+                    </tr>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>11:00 AM</td>
+                        <td>Desarrollo Web Moderno</td>
+                        <td>María García</td>
+                        <td>Sala 2</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td>2:00 PM</td>
+                        <td>Ciberseguridad en el Siglo XXI</td>
+                        <td>Carlos López</td>
+                        <td>Sala 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Calendario Completo</h2>
+            <p>Aquí se mostrará el calendario completo de las conferencias.</p>
+            <!-- Aquí puedes incluir el contenido del modal, como una tabla más detallada o una vista en formato de calendario -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <p>Email: <a href="mailto:ChunoEventos@gmail.com">ChunoEventos@gmail.com</a></p>
+                <p>Teléfono: <a href="tel:+65161616">66151512101</a></p>
+                <p>Universidad Católica Boliviana</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul class="social-media">
+                    <li><a href="#"><img src="img/facebook.png" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="#"><img src="img/instagram.png" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="#"><img src="img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 Conferencia Chuno</p>
+        </div>
+    </footer>
+
+    <script>
+        var modal = document.getElementById("calendar-modal");
+        var btn = document.getElementById("show-calendar");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

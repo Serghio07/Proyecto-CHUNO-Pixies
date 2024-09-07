@@ -41,6 +41,7 @@ header h1 {
     font-family: 'Verdana', sans-serif;
     letter-spacing: 2px; 
     text-transform: uppercase; 
+
 }
 
 nav ul {
@@ -71,9 +72,10 @@ nav ul li a.active {
     color: #333;
 }
 
+
 /* Banner */
 .banner {
-    background-image: url('img/img1.jpg');
+    background-image: url('img/pro.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -87,77 +89,142 @@ nav ul li a.active {
 
 .banner-content {
     max-width: 600px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .banner-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #652222;
+    background-color: #e94e4d;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background-color 0.3s ease;
 }
 
 .banner-btn:hover {
-    background-color: #e94e4d;
+    background-color: #d43f3f;
 }
 
-/* Sección */
+/* Sección Programa de Conferencias */
 .seccion {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 60px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 40px 20px;
 }
 
 h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #143056;
-}
-
-.contenedor-bloques {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.bloque {
-    flex-basis: 48%;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-.bloque p {
+p {
     font-size: 1.2em;
-    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-.imagen-inicio img {
-    max-width: 100%;
+.programa-img {
+    width: 100%;
+    max-width: 800px; /* Ajusta según el tamaño de la imagen */
     height: auto;
-    border-radius: 20px;
-    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto 30px auto; /* Centra la imagen horizontalmente y agrega margen inferior */
 }
 
-.imagen-inicio img:hover {
-    transform: scale(1.05);
+.show-calendar-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #005a9c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 30px; /* Espacio debajo del botón */
 }
 
-/* Separación entre secciones */
-section {
-    margin-bottom: 80px;
+.show-calendar-btn:hover {
+    background-color: #003d6c;
+}
+
+/* Estilo del Calendario */
+.calendario {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Centra la tabla en el contenedor */
+}
+
+.calendario th, .calendario td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.calendario th {
+    background-color: #007acc;
+    color: #ffffff;
+}
+
+.calendario td {
+    background-color: #ffffff;
+}
+
+.calendario tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.calendario tr:hover {
+    background-color: #e6e6e6;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Footer */
 footer {
-    background-color: #030303;
+    background-color: #222;
     color: #ffffff;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
@@ -177,11 +244,10 @@ footer {
     min-width: 250px;
 }
 
-.footer-section h1, 
-.footer-section h2, 
 .footer-section h3 {
     color: #ffffff;
     margin-bottom: 15px;
+    font-size: 1.2em;
 }
 
 .footer-section p {
@@ -207,15 +273,20 @@ footer {
 }
 
 .social-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
 }
 
 /* Barra Inferior */
 .bottom-bar {
     text-align: center;
     padding: 20px 0;
-    background-color: #222;
+    background-color: #111;
     margin-top: 20px;
 }
 
