@@ -5,8 +5,6 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-
-/* Header */
 header {
     background-color: #1a2a4f;
     color: white;
@@ -38,9 +36,9 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
-    font-family: 'Verdana', sans-serif;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -57,7 +55,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
