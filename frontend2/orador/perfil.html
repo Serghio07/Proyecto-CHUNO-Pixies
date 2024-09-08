@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Orador</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="/frontend2/img/logo.png" alt="Logo Conferencia Chuno">
+            </div>
+            <h1>Conferencias Chuno</h1>
+            <nav>
+                <ul>
+                <li><a href="panel.html">Charlas</a></li>
+                <li><a href="subirdiapo.html">Subir Diapositivas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="revisarEva">Evaluaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="perfil" class="seccion">
+        <h2>Mi Perfil</h2>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="">
+
+            <label for="bio">Biografía:</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+
+            <label for="foto">Subir foto de perfil:</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+
+            <button type="submit" class="btn-guardar">Guardar Cambios</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h1>Contáctanos</h1>
+                <p>Email: <a href="mailto:ChunoEventos@gmail.com">ChunoEventos@gmail.com</a></p>
+                <p>Teléfono: <a href="tel:+65161616">66151512101</a></p>
+                <p>Universidad Católica Boliviana</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul class="social-media">
+                    <li><a href="#"><img src="/frontend2/img/facebook.png" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="#"><img src="/frontend2/img/instagram.png" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="#"><img src="/frontend2/img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 Conferencia Chuno</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
