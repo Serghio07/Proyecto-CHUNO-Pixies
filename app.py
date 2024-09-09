@@ -15,6 +15,16 @@ app.register_blueprint(conferencias_bp)
 app.register_blueprint(notificaciones_bp)
 app.register_blueprint(evaluaciones_bp)
 
+# Decorador para verificar si el usuario ha iniciado sesión
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            flash("Por favor, inicia sesión para acceder a esta página", "warning")
+            return redirect(url_for('autenticacion_bp.login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
 # Ruta para la página principal
 @app.route('/')
 def index():
@@ -37,18 +47,16 @@ def salas():
 
 @app.route('/diapositivas')
 def diapositivas():
-    # Verifica si el usuario ha iniciado sesión
-    if 'user_id' in session:
-        return render_template('index.html', user=session['user'])
+    if 'user' in session:
+        return render_template('diapositiva.html', user=session['user'])
     else:
         flash("Por favor, inicia sesión para acceder a esta página", "warning")
         return redirect(url_for('autenticacion_bp.login'))
 
 @app.route('/votacion')
 def votacion():
-    # Verifica si el usuario ha iniciado sesión
-    if 'user_id' in session:
-        return render_template('index.html', user=session['user'])
+    if 'user' in session:
+        return render_template('votacion.html', user=session['user'])
     else:
         flash("Por favor, inicia sesión para acceder a esta página", "warning")
         return redirect(url_for('autenticacion_bp.login'))
