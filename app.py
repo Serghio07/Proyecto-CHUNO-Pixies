@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, session, redirect, url_for, render_template, flash
 from contacto import contacto_bp
 from autenticacion import autenticacion_bp
 from conferencias import conferencias_bp
@@ -6,6 +6,7 @@ from notificaciones import notificaciones_bp
 from evaluaciones import evaluaciones_bp
 
 app = Flask(__name__)
+app.secret_key = "supersecretkey"  # Necesario para usar flash messages
 
 # Registrar Blueprints
 app.register_blueprint(contacto_bp)
@@ -17,54 +18,44 @@ app.register_blueprint(evaluaciones_bp)
 # Ruta para la página principal
 @app.route('/')
 def index():
-    return render_template('index.html')
+        return render_template('index.html')
 
-# Ruta para "Sobre Nosotros"
-@app.route('/nosotros')
-def nosotros():
+@app.route('/sobre_nosotros')
+def sobre_nosotros():
     return render_template('nosotros.html')
 
-# Ruta para "Servicios"
-@app.route('/servicios')
-def servicios():
-    return render_template('servicios.html')
+@app.route('/programa')
+def programa():
+    # Llamar a la función que obtiene las conferencias
+    lista_conferencias = obtener_conferencias()
+    # Renderizar la plantilla y pasarle la lista de conferencias
+    return render_template('programa.html', conferencias=lista_conferencias)
 
-# Ruta para "Contacto"
-@app.route('/contacto')
-def contacto():
-    return render_template('contacto.html')
+@app.route('/salas')
+def salas():
+    return render_template('salas.html')
 
-# Ruta para "Panel Orador"
-@app.route('/orador_panel')
-def orador_panel():
-    return render_template('orador_panel.html')
+@app.route('/diapositivas')
+def diapositivas():
+    # Verifica si el usuario ha iniciado sesión
+    if 'user_id' in session:
+        return render_template('index.html', user=session['user'])
+    else:
+        flash("Por favor, inicia sesión para acceder a esta página", "warning")
+        return redirect(url_for('autenticacion_bp.login'))
 
-# Ruta para "Panel Asistente"
-@app.route('/asistente_panel')
-def asistente_panel():
-    return render_template('asistente_panel.html')
+@app.route('/votacion')
+def votacion():
+    # Verifica si el usuario ha iniciado sesión
+    if 'user_id' in session:
+        return render_template('index.html', user=session['user'])
+    else:
+        flash("Por favor, inicia sesión para acceder a esta página", "warning")
+        return redirect(url_for('autenticacion_bp.login'))
 
-# Ruta para "Panel Organizador"
-@app.route('/organizador_panel')
-def organizador_panel():
-    return render_template('organizador_panel.html')
-
-# Ruta para "Evaluaciones"
-@app.route('/evaluacion')
-def evaluacion():
-    return render_template('evaluacion.html')
-
-@app.route('/crear_charla')
-def crear_charla():
-    return render_template('crear_charla.html')
-
-@app.route('/editar_charla')
-def editar_charla():
-    return render_template('editar_charla.html')
-
-@app.route('/acceder_diapositivas')
-def acceder_diapositivas():
-    return render_template('acceder_diapositivas.html')
+@app.route('/inicio_sesion')
+def inicio_sesion():
+    return render_template('inicio_sesion.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

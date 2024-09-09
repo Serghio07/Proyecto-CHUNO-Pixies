@@ -10,18 +10,22 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="img/logo.png" alt="Logo Conferencia Chuno">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Conferencia Chuno">
             </div>
             <h1>Conferencias Chuno</h1>
             <nav>
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="programa.html">Programa de Conferencias</a></li>
-                    <li><a href="salas.html">Salas</a></li>
-                    <li><a href="diapositiva.html">Diapositivas de Oradores</a></li>
-                    <li><a href="votacion.html">Votación</a></li>
-                    <li><a href="inicio sesion.html">Iniciar Sesión</a></li>
+                    <li><a href="{{ url_for('index') }}" class="active">Inicio</a></li>
+                    <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+                    <li><a href="{{ url_for('programa') }}">Programa de Conferencias</a></li>
+                    <li><a href="{{ url_for('salas') }}">Salas</a></li>
+                    <li><a href="{{ url_for('diapositivas') }}">Diapositivas de Oradores</a></li>
+                    <li><a href="{{ url_for('votacion') }}">Votación</a></li>
+                    {% if session['user'] %}
+                <li><a href="{{ url_for('autenticacion_bp.logout') }}">Cerrar Sesión ({{ session['user']['name'] }})</a></li>
+                {% else %}
+                <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                {% endif %}
                 </ul>
             </nav>
         </div>
@@ -32,7 +36,7 @@
             <div class="banner-content">
                 <h1>Bienvenido a Nuestro Sitio Web</h1>
                 <p>Explora el emocionante mundo de las conferencias tecnológicas más innovadoras y descubre las oportunidades exclusivas que tenemos para ofrecerte.</p>
-                <a href="diapositiva.html" class="banner-btn">Ver Más</a>
+                <a href="{{ url_for('diapositivas') }}" class="banner-btn">Ver Más</a>
             </div>
         </div>
 
@@ -44,7 +48,7 @@
                     <p>Los asistentes tendrán la oportunidad de participar en charlas inspiradoras, sesiones interactivas y talleres prácticos que les permitirán profundizar en temas de vanguardia y obtener conocimientos aplicables a sus proyectos y empresas.</p>
                 </article>
                 <article class="bloque imagen-inicio" style="text-align:center;">
-                    <img src="img/im2.jpeg" alt="Imagen de conferencia Chuno" style="max-width: 100%; height: auto;">
+                    <img src="{{ url_for('static', filename='img/im2.jpeg') }}" alt="Imagen de conferencia Chuno" style="max-width: 100%; height: auto;">
                 </article>
                 <article class="bloque">
                     <p>Además, la Conferencia Chuno es el lugar ideal para establecer nuevas conexiones. Nuestros espacios de networking están diseñados para facilitar el encuentro entre profesionales de diversas áreas, creando un ambiente propicio para la colaboración y el intercambio de ideas. ¡No te pierdas esta oportunidad de estar a la vanguardia!</p>
@@ -73,9 +77,9 @@
             <div class="footer-section">
                 <h3>Síguenos en nuestras redes</h3>
                 <ul class="social-media">
-                    <li><a href="#"><img src="img/facebook.png" alt="Facebook" class="social-icon"></a></li>
-                    <li><a href="#"><img src="img/instagram.png" alt="Instagram" class="social-icon"></a></li>
-                    <li><a href="#"><img src="img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp" class="social-icon"></a></li>
                 </ul>
             </div>
         </div>

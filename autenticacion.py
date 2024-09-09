@@ -1,49 +1,67 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, redirect, url_for, flash, render_template, session
 import firebase_admin
-from firebase_admin import auth, credentials, firestore
+from firebase_admin import auth, credentials
 
-# Crear un Blueprint para la autenticación
+# Crear el Blueprint para autenticación
 autenticacion_bp = Blueprint('autenticacion_bp', __name__)
 
-# Configuración de Firebase
-try:
-    # Verifica si la app de Firebase ya está inicializada
-    firebase_admin.get_app()
-except ValueError:
-    # Si no está inicializada, inicialízala
-    cred = credentials.Certificate('chuno-6384b-firebase-adminsdk-3tk2c-6978abeab8.json')
-    firebase_admin.initialize_app(cred)
 
-# Conecta a Firestore
-db = firestore.client()
+# Ruta para manejar el registro de nuevos usuarios
+@autenticacion_bp.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        username = request.form['username']
+        role = request.form['role']
 
-@autenticacion_bp.route('/registro', methods=['POST'])
-def registro():
-    datos = request.json
-    email = datos['email']
-    contrasena = datos['contrasena']
-    rol = datos['rol']  # 'orador', 'asistente', 'organizador'
+        try:
+            # Crear el usuario en Firebase Authentication
+            user = auth.create_user(
+                email=email,
+                password=password,
+                display_name=username
+            )
+            
+            # Aquí puedes guardar el rol del usuario en Firestore u otra base de datos, si es necesario
+            # db.collection('roles').document(user.uid).set({'role': role})
 
-    try:
-        usuario = auth.create_user(
-            email=email,
-            password=contrasena
-        )
-        db.collection('usuarios').document(usuario.uid).set({
-            'email': email,
-            'rol': rol
-        })
-        return jsonify({"mensaje": "Usuario creado exitosamente"}), 201
-    except Exception as e:
-        return jsonify({"mensaje": str(e)}), 400
+            flash("Usuario registrado exitosamente", "success")
+            return redirect(url_for('autenticacion_bp.login'))  # Redirigir al formulario de login
+        except Exception as e:
+            flash(f"Error al registrar: {str(e)}", "error")
+            return render_template('signup.html')
+    return render_template('signup.html')
 
-@autenticacion_bp.route('/obtener_rol/<uid>', methods=['GET'])
-def obtener_rol(uid):
-    try:
-        usuario_doc = db.collection('usuarios').document(uid).get()
-        if usuario_doc.exists:
-            return jsonify(usuario_doc.to_dict()), 200
-        else:
-            return jsonify({"mensaje": "Usuario no encontrado"}), 404
-    except Exception as e:
-        return jsonify({"mensaje": str(e)}), 400
+# Ruta para manejar el inicio de sesión
+@autenticacion_bp.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            # Obtener el usuario de Firebase Authentication
+            user = auth.get_user_by_email(email)
+            # Aquí deberías validar la contraseña con Firebase SDK en el frontend
+            # Simulamos que el usuario ha iniciado sesión correctamente:
+            session['user_id'] = user.uid
+            session['user'] = {
+                'email': user.email,
+                'name': user.display_name,
+                'role': 'asistente'  # Aquí puedes agregar la lógica para obtener el rol
+            }
+            flash(f"Bienvenido, {user.display_name}", "success")
+            return redirect(url_for('index'))  # Redirigir a la página principal
+        except Exception as e:
+            flash(f"Error al iniciar sesión: {str(e)}", "error")
+            return render_template('inicio_sesion.html')
+    return render_template('inicio_sesion.html')
+
+# Ruta para manejar el cierre de sesión
+@autenticacion_bp.route('/logout')
+def logout():
+    # Eliminar los datos de la sesión
+    session.pop('user_id', None)
+    session.pop('user', None)
+    flash("Has cerrado sesión correctamente", "success")
+    return redirect(url_for('autenticacion_bp.login'))

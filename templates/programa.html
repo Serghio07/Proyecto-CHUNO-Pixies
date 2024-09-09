@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programa de Conferencias</title>
-    <link rel="stylesheet" href="progra.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/progra.css') }}">
 </head>
 <body>
     <header>
@@ -14,14 +14,18 @@
             </div>
             <h1>Conferencias Chuno</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="programa.html">Programa de Conferencias</a></li>
-                    <li><a href="salas.html">Salas</a></li>
-                    <li><a href="diapositiva.html">Diapositivas de Oradores</a></li>
-                    <li><a href="votacion.html">Votación</a></li>
-                    <li><a href="inicio sesion.html">Iniciar Sesión</a></li>
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('index') }}" class="active">Inicio</a></li>
+                    <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+                    <li><a href="{{ url_for('programa') }}">Programa de Conferencias</a></li>
+                    <li><a href="{{ url_for('salas') }}">Salas</a></li>
+                    <li><a href="{{ url_for('diapositivas') }}">Diapositivas de Oradores</a></li>
+                    <li><a href="{{ url_for('votacion') }}">Votación</a></li>
+                    {% if session['user'] %}
+                <li><a href="{{ url_for('autenticacion_bp.logout') }}">Cerrar Sesión ({{ session['user']['name'] }})</a></li>
+                {% else %}
+                <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                {% endif %}
                 </ul>
             </nav>
         </div>
@@ -56,29 +60,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Iterar sobre las conferencias obtenidas desde Flask -->
+                    {% for conferencia in conferencias %}
                     <tr>
-                        <td>Lunes</td>
-                        <td>10:00 AM</td>
-                        <td>Inteligencia Artificial</td>
-                        <td>Juan Pérez</td>
-                        <td>Sala 1</td>
+                        <td>{{ conferencia.dia }}</td>
+                        <td>{{ conferencia.hora }}</td>
+                        <td>{{ conferencia.titulo }}</td>
+                        <td>{{ conferencia.orador }}</td>
+                        <td>{{ conferencia.sala }}</td>
                     </tr>
-                    <tr>
-                        <td>Lunes</td>
-                        <td>11:00 AM</td>
-                        <td>Desarrollo Web Moderno</td>
-                        <td>María García</td>
-                        <td>Sala 2</td>
-                    </tr>
-                    <tr>
-                        <td>Martes</td>
-                        <td>2:00 PM</td>
-                        <td>Ciberseguridad en el Siglo XXI</td>
-                        <td>Carlos López</td>
-                        <td>Sala 3</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
-            </table>
+            </table>            
         </section>
     </main>
 

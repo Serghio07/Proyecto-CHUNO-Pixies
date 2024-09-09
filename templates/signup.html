@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHUNO - Regístrate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
@@ -14,14 +14,14 @@
             </div>
             <h1>Conferencias Chuno</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="programa.html">Programa de Conferencias</a></li>
-                    <li><a href="salas.html">Salas</a></li>
-                    <li><a href="diapositiva.html">Diapositivas de Oradores</a></li>
-                    <li><a href="votacion.html">Votación</a></li>
-                    <li><a href="inicio sesion.html">Iniciar Sesión</a></li>
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('index') }}" class="active">Inicio</a></li>
+                    <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+                    <li><a href="{{ url_for('programa') }}">Programa de Conferencias</a></li>
+                    <li><a href="{{ url_for('salas') }}">Salas</a></li>
+                    <li><a href="{{ url_for('diapositivas') }}">Diapositivas de Oradores</a></li>
+                    <li><a href="{{ url_for('votacion') }}">Votación</a></li>
+                    <li><a href="{{ url_for('inicio_sesion') }}">Iniciar Sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,7 +31,7 @@
         <section class="signup-container">
             <div class="signup-box">
                 <h2>Regístrate</h2>
-                <form action="/register" method="post">
+                <form action="{{ url_for('autenticacion_bp.signup') }}" method="POST">
                     <div class="input-group">
                         <label for="role">Selecciona tu rol:</label>
                         <select id="role" name="role" required>
@@ -53,8 +53,8 @@
                         <input type="password" id="password" name="password" required>
                     </div>
                     <button type="submit" class="btn-signup">Registrarse</button>
-                    <p class="login-link">¿Ya tienes una cuenta? <a href="inicio sesion.html">Inicia sesión aquí</a></p>
-                </form>
+                    <p class="login-link">¿Ya tienes una cuenta? <a href="{{ url_for('autenticacion_bp.login') }}">Inicia sesión aquí</a></p>
+                </form>              
             </div>
         </section>
     </main>
