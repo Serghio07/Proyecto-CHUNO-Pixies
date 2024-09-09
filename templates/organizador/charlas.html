@@ -46,7 +46,7 @@
             <div class="modal-content">
                 <button class="close" aria-label="Cerrar">&times;</button>
                 <h3 id="modal-titulo">Agregar Charla</h3>
-                <form id="form-charla" aria-labelledby="modal-titulo">
+                <form id="form-charla" aria-labelledby="modal-titulo" method="POST" action="/charlas">
                     <label for="titulo">Título:</label>
                     <input type="text" id="titulo" name="titulo" required aria-required="true">
                     <label for="fecha">Fecha:</label>
@@ -57,6 +57,7 @@
                     <input type="text" id="sala" name="sala" required aria-required="true">
                     <button type="submit" id="guardar-charla" aria-label="Guardar charla">Guardar</button>
                 </form>
+                
             </div>
         </div>
     </main>
