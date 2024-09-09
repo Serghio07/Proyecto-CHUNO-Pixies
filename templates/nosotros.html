@@ -10,7 +10,8 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="img/logo.png" alt="Logo Conferencia Chuno">
+                
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Conferencia Chuno">
             </div>
             <h1>Conferencias Chuno</h1>
             <nav>
@@ -41,7 +42,8 @@
 
             <!-- Bloque de imagen en el centro -->
             <article class="bloque imagen-inicio" style="text-align:center;">
-                <img src="img/sobre.jpg" alt="Equipo de Conferencias Chuno" style="max-width: 100%; height: auto;">
+                <img src="{{ url_for('static', filename='img/sobre.png') }}" alt="Equipo de Conferencias Chuno" style="max-width: 100%; height: auto;">
+
             </article>
 
             <!-- Segundo bloque de texto después de la imagen -->
@@ -53,7 +55,8 @@
         <!-- Misión -->
         <div class="bloque">
             <div class="imagen" style="flex: 1; text-align: center;">
-                <img src="img/mision.jpg" alt="Imagen de mision" style="max-width: 50%; height: auto; display: inline-block;">
+                <img src="{{ url_for('static', filename='img/mision.jpg') }}" alt="Imagen de mision" style="max-width: 50%; height: auto; display: inline-block;">
+
             </div>
             <div class="texto" style="flex: 1; text-align: center;">
                 <h2>Nuestra Misión</h2>
@@ -64,7 +67,7 @@
         <!-- Visión -->
         <div class="bloque reverse">
             <div class="imagen" style="flex: 1; text-align: center;">
-                <img src="img/vision.jpg" alt="Imagen de vision" style="max-width: 50%; height: auto; display: inline-block;">
+                <img src="{{ url_for('static', filename='img/vision.jpg') }}"alt="Imagen de vision" style="max-width: 50%; height: auto; display: inline-block;">
             </div>
             <div class="texto" style="flex: 1; text-align: center;">
                 <h2>Nuestra Visión</h2>

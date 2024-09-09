@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluaciones - Conferencias Chuno</title>
-    <link rel="stylesheet" href="revisarEva.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/revisarEva.css') }}">
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="../img/logo.png" alt="Logo Conferencia">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Conferencia">
             </div>
             <h1>Conferencias Chuno</h1>
             <nav>
                 <ul>
-                <li><a href="panel.html">Charlas</a></li>
-                <li><a href="subirdiapo.html">Subir Diapositivas</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="revisarEva.html">Evaluaciones</a></li>
-                <li><a href="../index.html">Cerrar Sesión</a></li>
+                    <li><a href="panel.html">Charlas</a></li>
+                    <li><a href="subirdiapo.html">Subir Diapositivas</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="revisarEva.html">Evaluaciones</a></li>
+                    <li><a href="../index.html">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -57,9 +57,9 @@
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <ul class="social-media">
-                    <li><a href="#"><img src="../img/facebook.png" alt="Facebook" class="social-icon"></a></li>
-                    <li><a href="#"><img src="../img/instagram.png" alt="Instagram" class="social-icon"></a></li>
-                    <li><a href="#"><img src="../img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp" class="social-icon"></a></li>
                 </ul>
             </div>
         </div>
@@ -67,7 +67,5 @@
             <p>&copy; 2024 Conferencia Chuno - Todos los derechos reservados.</p>
         </div>
     </footer>
-
-  
 </body>
 </html>

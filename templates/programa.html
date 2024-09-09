@@ -10,7 +10,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="img/logo.png" alt="Logo Conferencia Chuno">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Conferencia Chuno">
             </div>
             <h1>Conferencias Chuno</h1>
             <nav>
@@ -44,8 +44,7 @@
             <p>Consulte el calendario de nuestras conferencias a continuación para conocer las charlas programadas por día, hora y sala.</p>
             
             
-            <img src="img/img2.jpg" alt="Imagen del Programa de Conferencias" class="programa-img">
-    
+            <img src="{{ url_for('static', filename='img/img2.jpg') }}" alt="Imagen del Programa de Conferencias" class="programa-img">
           
             <button id="show-calendar" class="show-calendar-btn">Mostrar Calendario</button>
             

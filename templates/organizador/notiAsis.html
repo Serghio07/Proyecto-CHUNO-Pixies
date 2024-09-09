@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Notificaciones</title>
-    <link rel="stylesheet" href="notiAsis.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notiAsis.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="../img/logo.png" alt="Logo de Conferencias Chuno" aria-label="Logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo de Conferencias Chuno" aria-label="Logo">
             </div>
             <h1>Conferencias Chuno</h1>
             <nav aria-label="Navegación principal">
@@ -24,7 +24,6 @@
                     <li><a href="notiAsis.html">Notificaciones</a></li>
                     <li><a href="personal.html">Personal del Evento</a></li>
                     <li><a href="../index.html">Cerrar Sesión</a></li>
-
                 </ul>
             </nav>
         </div>
@@ -64,9 +63,9 @@
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <ul class="social-media">
-                    <li><a href="#"><img src="../img/facebook.png" alt="Facebook" class="social-icon"></a></li>
-                    <li><a href="#"><img src="../img/instagram.png" alt="Instagram" class="social-icon"></a></li>
-                    <li><a href="#"><img src="../img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp" class="social-icon"></a></li>
                 </ul>
             </div>
         </div>

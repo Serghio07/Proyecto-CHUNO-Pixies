@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Panel de gestión para la organización de conferencias y charlas en Conferencias Chuno.">
     <title>Panel de Gestión - Charlas</title>
-    <link rel="stylesheet" href="charlas.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charlas.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="../img/logo.png" alt="Logo de Conferencias Chuno" aria-label="Logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo de Conferencias Chuno" aria-label="Logo">
             </div>
             <h1>Conferencias Chuno</h1>
             <nav aria-label="Navegación principal">
@@ -25,7 +25,6 @@
                     <li><a href="notiAsis.html">Notificaciones</a></li>
                     <li><a href="personal.html">Personal del Evento</a></li>
                     <li><a href="../index.html">Cerrar Sesión</a></li>
-
                 </ul>
             </nav>
         </div>
@@ -41,7 +40,6 @@
             </ul>
         </section>
 
-    
         <div id="modal-charla" class="modal" aria-hidden="true">
             <div class="modal-content">
                 <button class="close" aria-label="Cerrar">&times;</button>
@@ -57,7 +55,6 @@
                     <input type="text" id="sala" name="sala" required aria-required="true">
                     <button type="submit" id="guardar-charla" aria-label="Guardar charla">Guardar</button>
                 </form>
-                
             </div>
         </div>
     </main>
@@ -73,9 +70,9 @@
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <ul class="social-media">
-                    <li><a href="#"><img src="../img/facebook.png" alt="Facebook" class="social-icon"></a></li>
-                    <li><a href="#"><img src="../img/instagram.png" alt="Instagram" class="social-icon"></a></li>
-                    <li><a href="#"><img src="../img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp" class="social-icon"></a></li>
                 </ul>
             </div>
         </div>
@@ -83,30 +80,28 @@
             <p>&copy; 2024 Conferencia Chuno - Todos los derechos reservados.</p>
         </div>
     </footer>
+
     <script>
-        
         const modal = document.getElementById("modal-charla");
         const btnAgregar = document.getElementById("btn-agregar");
         const closeBtn = document.querySelector(".close");
-       
+
         btnAgregar.onclick = function() {
             modal.style.display = "flex";  
             modal.setAttribute("aria-hidden", "false"); 
         }
-        
+
         closeBtn.onclick = function() {
             modal.style.display = "none";  
             modal.setAttribute("aria-hidden", "true");  
         }
-        
-       
+
         window.onclick = function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
                 modal.setAttribute("aria-hidden", "true");
             }
         }
-        </script>
-        
+    </script>
 </body>
 </html>
