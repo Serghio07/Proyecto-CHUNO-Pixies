@@ -5,9 +5,16 @@ from firebase_admin import auth, credentials, firestore
 # Crear un Blueprint para la autenticación
 autenticacion_bp = Blueprint('autenticacion_bp', __name__)
 
-# Configuración de Firebase (esto podría estar en un archivo de configuración separado)
-cred = credentials.Certificate('ruta/a/tu/archivo/credenciales.json')
-firebase_admin.initialize_app(cred)
+# Configuración de Firebase
+try:
+    # Verifica si la app de Firebase ya está inicializada
+    firebase_admin.get_app()
+except ValueError:
+    # Si no está inicializada, inicialízala
+    cred = credentials.Certificate('chuno-6384b-firebase-adminsdk-3tk2c-6978abeab8.json')
+    firebase_admin.initialize_app(cred)
+
+# Conecta a Firestore
 db = firestore.client()
 
 @autenticacion_bp.route('/registro', methods=['POST'])
