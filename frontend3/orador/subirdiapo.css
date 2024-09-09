@@ -1,0 +1,252 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1a2a4f;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 60px;
+    transition: transform 0.3s ease; 
+}
+
+.logo img:hover {
+    transform: scale(1.1); 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Verdana', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+nav ul li a.active {
+    background-color: white;
+    color: #333;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #2e3d69;
+    color: white;
+}
+
+nav ul li a.active {
+    background-color: white;
+    color: #333;
+}
+
+
+.seccion {
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #1a2a4f;
+}
+
+.guia {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #555;
+    font-style: italic;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+select, input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.btn-subir {
+    background-color: #0a35ac;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #1a2a4f;
+    color: white;
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-section h1, 
+.footer-section h2, 
+.footer-section h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-section a:hover {
+    color: #e94e4d;
+    text-decoration: underline;
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Barra Inferior */
+.bottom-bar {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #222;
+    margin-top: 20px;
+}
+
+.bottom-bar p {
+    margin: 0;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .charla-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+}
