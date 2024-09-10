@@ -51,9 +51,9 @@ nav ul {
     display: flex;
     gap: 25px;
 }
-nav ul li a.active {
-    background-color: white;
-    color: #333;
+
+nav ul li {
+    flex-shrink: 1; 
 }
 
 nav ul li a {
@@ -64,16 +64,14 @@ nav ul li a {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 nav ul li a:hover, nav ul li a:focus {
     background-color: #2e3d69;
-    color: white;
-}
-
-nav ul li a.active {
-    background-color: white;
-    color: #333;
+    color: #f4f4f4;
 }
 
 
