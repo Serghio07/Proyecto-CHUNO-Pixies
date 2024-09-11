@@ -24,7 +24,7 @@
                     {% if session['user'] %}
                 <li><a href="{{ url_for('autenticacion_bp.logout') }}">Cerrar Sesión ({{ session['user']['name'] }})</a></li>
                 {% else %}
-                <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                <li><a href="{{ url_for('inicio_sesion') }}">Iniciar Sesión</a></li>
                 {% endif %}
                 </ul>
             </nav>
@@ -73,9 +73,9 @@
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <ul class="social-media">
-                    <li><a href="#"><img src="img/facebook.png" alt="Facebook" class="social-icon"></a></li>
-                    <li><a href="#"><img src="img/instagram.png" alt="Instagram" class="social-icon"></a></li>
-                    <li><a href="#"><img src="img/whatsapp.png" alt="WhatsApp" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram" class="social-icon"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp" class="social-icon"></a></li>
                 </ul>
             </div>
         </div>

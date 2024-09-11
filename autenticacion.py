@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, url_for, flash, render_template, session
+from flask import Blueprint, request, redirect, url_for, flash, render_template, session, jsonify
 import firebase_admin
 from firebase_admin import auth, credentials
 
@@ -22,10 +22,8 @@ def signup():
                 password=password,
                 display_name=username
             )
-            
             # Aquí puedes guardar el rol del usuario en Firestore u otra base de datos, si es necesario
             # db.collection('roles').document(user.uid).set({'role': role})
-
             flash("Usuario registrado exitosamente", "success")
             return redirect(url_for('autenticacion_bp.login'))  # Redirigir al formulario de login
         except Exception as e:
@@ -34,28 +32,21 @@ def signup():
     return render_template('signup.html')
 
 # Ruta para manejar el inicio de sesión
-@autenticacion_bp.route('/login', methods=['GET', 'POST'])
+@autenticacion_bp.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+        data = request.json
         try:
-            # Obtener el usuario de Firebase Authentication
-            user = auth.get_user_by_email(email)
-            # Aquí deberías validar la contraseña con Firebase SDK en el frontend
-            # Simulamos que el usuario ha iniciado sesión correctamente:
-            session['user_id'] = user.uid
+            # Guardar los datos del usuario en la sesión
+            session['user_id'] = data['uid']
             session['user'] = {
-                'email': user.email,
-                'name': user.display_name,
-                'role': 'asistente'  # Aquí puedes agregar la lógica para obtener el rol
+                'email': data['email'],
+                'name': data['displayName'],
+                'role': 'asistente'  # Aquí puedes agregar la lógica para obtener el rol desde Firebase o Firestore
             }
-            flash(f"Bienvenido, {user.display_name}", "success")
-            return redirect(url_for('index'))  # Redirigir a la página principal
+            return jsonify({"success": True}), 200
         except Exception as e:
-            flash(f"Error al iniciar sesión: {str(e)}", "error")
-            return render_template('inicio_sesion.html')
-    return render_template('inicio_sesion.html')
+            return jsonify({"success": False, "message": str(e)}), 400
 
 # Ruta para manejar el cierre de sesión
 @autenticacion_bp.route('/logout')

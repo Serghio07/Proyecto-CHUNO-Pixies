@@ -22,10 +22,10 @@
                     <li><a href="{{ url_for('diapositivas') }}">Diapositivas de Oradores</a></li>
                     <li><a href="{{ url_for('votacion') }}">Votación</a></li>
                     {% if session['user'] %}
-                <li><a href="{{ url_for('autenticacion_bp.logout') }}">Cerrar Sesión ({{ session['user']['name'] }})</a></li>
-                {% else %}
-                <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
-                {% endif %}
+                    <li><a href="{{ url_for('autenticacion_bp.logout') }}">Cerrar Sesión ({{ session['user']['name'] }})</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('inicio_sesion') }}">Iniciar Sesión</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>

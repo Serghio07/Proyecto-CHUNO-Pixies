@@ -4,6 +4,9 @@ from autenticacion import autenticacion_bp
 from conferencias import conferencias_bp
 from notificaciones import notificaciones_bp
 from evaluaciones import evaluaciones_bp
+from asistente_bp import asistente_bp  # Blueprint del asistente
+from orador_bp import orador_bp  # Blueprint del orador
+from organizador_bp import organizador_bp  # Blueprint del organizador
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"  # Necesario para usar flash messages
@@ -14,6 +17,9 @@ app.register_blueprint(autenticacion_bp)
 app.register_blueprint(conferencias_bp)
 app.register_blueprint(notificaciones_bp)
 app.register_blueprint(evaluaciones_bp)
+app.register_blueprint(asistente_bp)
+app.register_blueprint(orador_bp)
+app.register_blueprint(organizador_bp)
 
 # Decorador para verificar si el usuario ha iniciado sesión
 def login_required(f):
