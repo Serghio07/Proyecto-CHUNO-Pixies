@@ -1,3 +1,4 @@
+from functools import wraps
 from flask import Flask, session, redirect, url_for, render_template, flash
 from contacto import contacto_bp
 from autenticacion import autenticacion_bp
@@ -31,10 +32,45 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+# Decorador para verificar el rol del usuario
+def role_required(allowed_roles):
+    def decorator(f):
+        @wraps(f)
+        def decorated_function(*args, **kwargs):
+            if 'role' not in session:
+                flash("Acceso denegado. Inicia sesión para continuar.", "warning")
+                return redirect(url_for('autenticacion_bp.login'))
+            if session['role'] not in allowed_roles:
+                flash("No tienes permiso para acceder a esta página.", "danger")
+                return redirect(url_for('index'))
+            return f(*args, **kwargs)
+        return decorated_function
+    return decorator
+
+# Rutas protegidas según el rol
+
+@app.route('/asistente/dashboard')
+@login_required
+@role_required(['asistente'])
+def dashboard_asistente():
+    return render_template('index.html')
+
+@app.route('/orador/dashboard')
+@login_required
+@role_required(['orador'])
+def dashboard_orador():
+    return render_template('indexOR.html')
+
+@app.route('/organizador/dashboard')
+@login_required
+@role_required(['organizador'])
+def dashboard_organizador():
+    return render_template('indexO.html')
+
 # Ruta para la página principal
 @app.route('/')
 def index():
-        return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/sobre_nosotros')
 def sobre_nosotros():
@@ -52,20 +88,16 @@ def salas():
     return render_template('salas.html')
 
 @app.route('/diapositivas')
+@login_required
+@role_required(['asistente', 'orador', 'organizador'])  # Usuarios permitidos
 def diapositivas():
-    if 'user' in session:
-        return render_template('diapositiva.html', user=session['user'])
-    else:
-        flash("Por favor, inicia sesión para acceder a esta página", "warning")
-        return redirect(url_for('autenticacion_bp.login'))
+    return render_template('diapositiva.html')
 
 @app.route('/votacion')
+@login_required
+@role_required(['asistente', 'orador', 'organizador'])
 def votacion():
-    if 'user' in session:
-        return render_template('votacion.html', user=session['user'])
-    else:
-        flash("Por favor, inicia sesión para acceder a esta página", "warning")
-        return redirect(url_for('autenticacion_bp.login'))
+    return render_template('votacion.html')
 
 @app.route('/inicio_sesion')
 def inicio_sesion():
